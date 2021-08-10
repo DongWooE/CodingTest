@@ -1,3 +1,5 @@
+//bfs
+
 #include <vector>
 #include <queue>
 #include <utility>
@@ -60,6 +62,47 @@ vector<int> solution(int m, int n, vector<vector<int>> picture) {
                 int cnt = bfs(picture,c,i,j);      
                 array.push_back(cnt);  
             }
+        }
+    }
+    
+    vector<int> answer(2);
+    answer[0] = array.size();
+    answer[1] = *max_element(array.begin(), array.end());
+    return answer;
+}
+
+
+
+//dfs
+
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int dfs(vector<vector<int>>picture,vector<vector<int>>&c,int m,int n){
+    c[m][n] = 1;
+    int value = picture[m][n];
+    int cnt = 1;
+    if(m !=0 && !c[m-1][n] && value == picture[m-1][n])   cnt += dfs(picture,c,m-1,n);
+    if(n !=0 && !c[m][n-1] && value == picture[m][n-1])   cnt += dfs(picture,c,m,n-1);
+    if(m != picture.size()-1 && !c[m+1][n] && value == picture[m+1][n])   cnt += dfs(picture,c,m+1,n);
+    if(n != picture[0].size()-1 && !c[m][n+1] && value == picture[m][n+1])    cnt += dfs(picture,c,m,n+1);
+    return cnt;
+    }
+
+// 전역 변수를 정의할 경우 함수 내에 초기화 코드를 꼭 작성해주세요.
+vector<int> solution(int m, int n, vector<vector<int>> picture) {
+    
+    vector<int>array;
+    
+    //방문 여부를 위한 checked 배열
+    vector<vector<int>>c(m, vector<int>(n,0));
+    
+    for(int i =0; i < picture.size(); i++){
+        for(int j =0; j < picture[i].size(); j++){        
+            if(picture[i][j] && !c[i][j]){
+                array.push_back(dfs(picture,c,i,j));
+            }                         
         }
     }
     
