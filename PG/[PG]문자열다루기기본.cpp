@@ -1,15 +1,13 @@
 #include <string>
 #include <vector>
+#include <cctype>
 
 using namespace std;
 
 bool solution(string s) {
-    bool answer = true;
-    for(auto i : s)
-    if(i <= '9' && i >= '0') continue;
-    else{ 
-        answer = false;    
-        break;
+    if(s.size() != 4 && s.size() != 6) return false;
+    for(auto c: s){
+        if(!isdigit(c)) return false;
     }
-    return answer;
+    return true;
 }
