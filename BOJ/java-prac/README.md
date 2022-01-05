@@ -23,3 +23,9 @@
  
 ### 유의사항
 - Integer.valueOf와 Interger.parseInt의 차이
+
+## 10.java(문자열에서 특정 문자와의 최소 거리 출력)
+### 모범답안 #1 .
+- p라는 변수를 100으로 두고 앞뒤로 탐색하며 거리를 재정비
+### 유의사항
+- Integer.valueOf와 Interger.parseInt의 차이
