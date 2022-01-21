@@ -21,11 +21,20 @@ public class code19 {
         int index = 0;
         while(N-- > 0){
             int number = scan.nextInt();
-            StringBuilder stringBuilder = new StringBuilder(String.valueOf(number));
-            stringBuilder = stringBuilder.reverse();
-            number = Integer.parseInt(stringBuilder.toString());
-            if(solution(number)) {
-                array[index++] = number;
+
+            //그냥 int형에서 뒤집기
+            int res = 0;
+            while(number >0){
+                int t = number%10;
+                res = res * 10 + t;
+                number /= 10;
+            }
+            //StringBuilder로 변환 후 뒤집기
+//            StringBuilder stringBuilder = new StringBuilder(String.valueOf(number));
+//            stringBuilder = stringBuilder.reverse();
+//            number = Integer.parseInt(stringBuilder.toString());
+            if(solution(res)) {
+                array[index++] = res;
             }
         }
         for(int cur : array){
