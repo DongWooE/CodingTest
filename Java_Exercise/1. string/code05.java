@@ -1,3 +1,5 @@
+package string;
+
 import java.util.*;
 
 // lt와 rt를 활용한 문자열에서 한번에 탐색하는 방법

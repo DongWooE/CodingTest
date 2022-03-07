@@ -1,6 +1,8 @@
+package string;
+
 import java.util.*;
 
-public class Main {
+public class code04 {
     public void solution(ArrayList<String> s) {
         for(String x : s){
             StringBuilder sb = new StringBuilder(x);
@@ -8,7 +10,7 @@ public class Main {
         }
     }
     public static void main(String[] args) {
-        Main main = new Main();
+        code04 main = new code04();
         Scanner scan = new Scanner(System.in);
         int t = scan.nextInt();
         ArrayList<String> l = new ArrayList<String>();

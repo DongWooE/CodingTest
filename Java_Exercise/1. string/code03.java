@@ -1,3 +1,5 @@
+package string;
+
 import java.util.*;
 
 // indexOf와 substring을 활용한 토큰 분리

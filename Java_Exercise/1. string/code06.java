@@ -1,7 +1,9 @@
+package string;
+
 import java.util.*;
 
 // charAt과 indexOf를 사용
-public class Main{
+public class code06 {
     public static void solution(String str){
         String t = "";
         for(int i =0;i < str.length(); i++){
